@@ -9,4 +9,5 @@ Features
  Daily Quote
  Daily Photo
  Offline Support
+ 
 Try it out
