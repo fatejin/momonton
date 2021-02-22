@@ -1,2 +1,12 @@
-# momonton
-A clone of the productivity chrome app Momentum on Vanilla JS (바닐라 자바스크립트 모멘텀 앱 만들기)
+
+Momonton
+A clone of the productivity chrome app Momentum on Vanilla JS
+
+Features
+ Clock
+ To Do List
+ Weather
+ Daily Quote
+ Daily Photo
+ Offline Support
+Try it out
