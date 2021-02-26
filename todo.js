@@ -4,7 +4,22 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
-const toDos = [];
+let toDos = [];
+
+function filterFn(toDo) {
+    return toDo.id === 1
+}
+
+function deleteToDo(event) {
+    const btn = event.target;
+    const li = btn.parentNode;
+    toDoList.removeChild(li);
+    const cleanToDos = toDos.filter(function (toDo) {
+        return toDo.id !== parseInt(li.id);  //parseInt turn into string to number
+    });
+    toDos = cleanToDos
+    saveToDos();
+}
 
 function saveToDos() {
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
@@ -24,6 +39,7 @@ function paintToDo(text) {
     const span = document.createElement("span");
     const newId = toDos.length + 1;
     delBtn.innerText = "❌";
+    delBtn.addEventListener("click", deleteToDo);
     span.innerText = text;
     li.appendChild(delBtn);
     li.appendChild(span);
@@ -54,7 +70,7 @@ function loadToDos() {
             1) foreach는 자바스크립트에서 제공하는 메소드입니다. foreach메소드는 콜백함수를 인자로 갖고 콜백함수가 실행될 때 
             parsedToDo배열에 들었는 값들을 하나씩 받아주기 위해 toDo를 함수내에서 변수로 선언한것이다.
             2) text는 paintToDo함수에서 매개변수로 넘어오는 text(To Do에 작성한 내용)를 받아주기 위한 변수입니다.
-            
+            -> very important stuff is the foreach method
             
             */
         });
