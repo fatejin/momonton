@@ -19,4 +19,4 @@ function init() {
     paintImage(randomNumber);
 }
 
-init();
+init();  
